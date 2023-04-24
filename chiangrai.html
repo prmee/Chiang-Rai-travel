@@ -1,0 +1,259 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chiang rai travel</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+    
+    <!-- W3 CSS template -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+    <style>
+    #mapid {
+    height: 800px;
+    }
+    </style>
+</head>
+<body>
+    
+    <div class="w3-row">
+        <div id="mapid" class="w3-half"></div>
+        <div id="content" class="w3-half">
+        <table class="w3-table w3-striped">
+        <tr>
+        <th>ชื่อแหล่งท่องเที่ยว</th>
+        <th>ประเภท</th>
+        <th>ระดับ</th>
+        </tr>
+        <tr>
+        <td>น้ำตก A</td>
+        <td>ธรรมชาติ</td>
+        <td>A</td>
+        </tr>
+        </table>
+        </div>
+        </div>
+<script>
+    var map = L.map("mapid").setView([19.89325216371744, 99.97096723120343], 10);
+ 
+ var osm = L.tileLayer(
+ "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+ ).addTo(map);
+ var gsat = L.tileLayer(
+ "https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}"
+ ).addTo(map);
+ var OpenStreetMap_HOT = L.tileLayer("https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png").addTo(map);
+ 
+ var baseMaps = {
+ OSM: osm,
+ GoogleSat: gsat,
+ streetmap : OpenStreetMap_HOT 
+ };
+
+ var chiangrai = {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "วัดร่องขุ่น",
+          "type": "วัฒนธรรม",
+          "level": 8
+        },
+        "geometry": {
+          "coordinates": [
+            99.76339181349175,
+            19.824031348804652
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "วัดร่องเสือเต้น",
+          "type": "วัฒนธรรม",
+          "level": 10
+        },
+        "geometry": {
+          "coordinates": [
+            99.8418720000015,
+            19.92334339305502
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "วัดห้วยปลากั้ง",
+          "type": "วัฒนธรรม",
+          "level": 10
+        },
+        "geometry": {
+          "coordinates": [
+            99.80694972883384,
+            19.949454425214526
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "บ้านดำ",
+          "type": "พิพิธภัณฑ์",
+          "level": 7
+        },
+        "geometry": {
+          "coordinates": [
+            99.82472654232583,
+            19.914318349141908
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "วัดพระแก้ว",
+          "type": "วัฒนธรรม",
+          "level": 8
+        },
+        "geometry": {
+          "coordinates": [
+            99.82802849999888,
+            19.91180341255692
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "ภูชี้ดาว",
+          "type": "ธรรมชาติ",
+          "level": 10
+        },
+        "geometry": {
+          "coordinates": [
+            100.48125418650926,
+            19.870906090049175
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "ไร่ชาฉุยฟง",
+          "type": "ธรรมชาติ",
+          "level": 10
+        },
+        "geometry": {
+          "coordinates": [
+            99.81827600000065,
+            20.19916279302862
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "เชียงรายไนท์บาร์ซ่า",
+          "type": "ตลาดนัด",
+          "level": 6
+        },
+        "geometry": {
+          "coordinates": [
+            99.83396699999889,
+            19.905019000000223
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Melt in your mouth",
+          "type": "ร้านอาหาร",
+          "level": 10
+        },
+        "geometry": {
+          "coordinates": [
+            99.83540999520255,
+            19.91741387715595
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "365 coffee",
+          "type": "ร้านอาหาร",
+          "level": 6
+        },
+        "geometry": {
+          "coordinates": [
+            99.86025784694499,
+            19.99255968486989
+          ],
+          "type": "Point"
+        }
+      }
+    ]
+  }
+
+  var tourLayer = L.geoJSON(chiangrai, {
+ pointToLayer: function (feature, latlng) {
+ return L.marker(latlng).bindPopup(feature.properties.name);
+ },
+ onEachFeature: function (feature, layer) {
+ layer.on("mouseover", function () {
+ document
+ .getElementById(feature.properties.name)
+ .classList.add("w3-red");
+ });
+ 
+ layer.on("mouseout", function () {
+ document
+ .getElementById(feature.properties.name)
+ .classList.remove("w3-red");
+ });
+ },
+ }).addTo(map);
+ 
+ var cont = "";
+ cont += "<table class='w3-table w3-striped'>";
+ cont += "<tr>";
+ cont += "<th>ชื่อแหล่งท่องเที่ยว</th>";
+ cont += "<th>ประเภท</th>";
+ cont += "<th>ระดับ</th>";
+ cont += "</tr>";
+ for (let i in chiangrai.features) {
+ cont += "<tr id=" + chiangrai.features[i].properties.name + ">";
+ cont += "<td>" + chiangrai.features[i].properties.name + "</td>";
+ cont += "<td>" + chiangrai.features[i].properties.type + "</td>";
+ cont += "<td>" + chiangrai.features[i].properties.level + "</td>";
+ cont += "</tr>";
+ }
+ cont += "</table>";
+ console.log(cont);
+ document.getElementById("content").innerHTML = cont;
+
+ var overlays = {สถานที่ท่องเที่ยว: tourLayer};
+ //add leyer control
+ L.control.layers(baseMaps, overlays).addTo(map);
+</script>
+
+
+</body>
+</html>
